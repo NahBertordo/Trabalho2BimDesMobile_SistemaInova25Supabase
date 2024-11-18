@@ -1,4 +1,3 @@
-// screens/Grupos.tsx
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, ActivityIndicator, Button } from 'react-native';
 import { supabase } from '../lib/supabase';

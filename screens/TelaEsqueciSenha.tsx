@@ -1,4 +1,3 @@
-// screens/EsqueciSenha.tsx
 import React, { useState } from 'react';
 import { View, TextInput, Button, Alert, StyleSheet, Text, Pressable, Image } from 'react-native';
 import { supabase } from '../lib/supabase';
@@ -7,12 +6,12 @@ export default function TelaEsqueciSenha({ navigation }: { navigation: any }) {
   const [email, setEmail] = useState('');
 
   const handleEsqueciSenha = async () => {
-    const { error } = await supabase.auth.resetPasswordForEmail(email);
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email);
     if (error) {
       Alert.alert('Erro', error.message);
     } else {
       Alert.alert('Sucesso', 'Verifique seu email para redefinir a senha.');
-      navigation.navigate('Login');
+      navigation.navigate('UpdateSenha', {email});
     }
   };
 
@@ -22,11 +21,10 @@ export default function TelaEsqueciSenha({ navigation }: { navigation: any }) {
         source={{ uri: 'https://uvv.br/wp-content/themes/core/dist/images/logo.png' }}
         style={styles.logo}
       />
-      <TextInput style={styles.input} placeholder="Nova senha" secureTextEntry />
-      <TextInput style={styles.input} placeholder="Confirme a nova senha" secureTextEntry />
+      <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} />
       {/*Estilo do botão redefinir senha*/}
-      <Pressable style={styles.bnt} onPress={() => navigation.navigate('TelaLogin')}>
-      <Text style={styles.textButton}>Alterar</Text>
+      <Pressable style={styles.bnt} onPress={handleEsqueciSenha}>
+      <Text style={styles.textButton}>Redefinir Senha</Text>
       </Pressable>
     </View>
   );

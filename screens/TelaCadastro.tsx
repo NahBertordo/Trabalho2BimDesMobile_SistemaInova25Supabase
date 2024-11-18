@@ -1,4 +1,3 @@
-// screens/Cadastro.tsx
 import React, { useState } from 'react';
 import { View, TextInput, Button, Alert, Pressable, Image, Text, StyleSheet } from 'react-native';
 import { supabase } from '../lib/supabase';

@@ -1,4 +1,3 @@
-// App.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,6 +6,7 @@ import TelaCadastro from './screens/TelaCadastro';
 import TelaEsqueciSenha from './screens/TelaEsqueciSenha';
 import TelaHome from './screens/TelaHome';
 import TelaDetalhes from './screens/TelaDetalhes';
+import TelaUpdateSenha from './screens/TelaUpdateSenha';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +19,7 @@ export default function App() {
         <Stack.Screen name="TelaEsqueciSenha" component={TelaEsqueciSenha} />
         <Stack.Screen name="TelaHome" component={TelaHome} />
         <Stack.Screen name="TelaDetalhes" component={TelaDetalhes} />
+        <Stack.Screen name='TelaUpdateSenha' component={TelaUpdateSenha} />
       </Stack.Navigator>
     </NavigationContainer>
   );

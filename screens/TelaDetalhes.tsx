@@ -1,4 +1,3 @@
-// screens/EspecificacaoGrupo.tsx
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { supabase } from '../lib/supabase';

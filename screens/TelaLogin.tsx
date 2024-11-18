@@ -1,4 +1,3 @@
-// screens/Login.tsx
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, Alert, Image, Pressable, StyleSheet } from 'react-native';
 import { supabase } from '../lib/supabase';
